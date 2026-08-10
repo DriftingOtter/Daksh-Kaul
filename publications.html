@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Daksh Kaul - Publications</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap"
+    rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap" rel="stylesheet">
+
+  <!-- Hover.css -->
+  <link href="css/hover.css" rel="stylesheet">
+
+
+  <!-- Image Gallery Viewer -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery@2.9.0/css/lightgallery-bundle.min.css" />
+
+
+  <link href="css/style.css" rel="stylesheet">
+  <link rel="icon" type="image/svg+xml" href="./assets/logos/lamda-delta-logo-dark.svg">
+
+  <script type="module" src="./bundle.js"></script>
+  <script src="https://kit.fontawesome.com/2ad54d8774.js" crossorigin="anonymous"></script>
+</head>
+
+
+<body>
+
+  <!-- Name Looping Text -->
+  <div class="position-relative marquee-container d-none d-sm-block">
+    <div class="marquee d-flex justify-content-around">
+      <span class="loop-text hvr-grow-rotate"><b>Daksh Kaul</b>...</span>
+    </div>
+  </div>
+
+  <!-- Nav Bar -->
+  <div class="divTable navTable">
+    <div class="divTableBody">
+      <div class="divTableRow">
+        <div class="divTableCell">
+          <a class="hvr-hang" href="./about_me.html" rel="noopener noreferrer">
+            <h1 class="nav-btn">About Me</h1>
+          </a>
+        </div>
+        <div class="divTableCell">
+          <a class="hvr-hang" href="./current_projects.html" rel="noopener noreferrer">
+            <h1 class="nav-btn">Current Projects</h1>
+          </a>
+        </div>
+        <div class="divTableCell">
+          <a class="hvr-hang" href="./index.html" rel="noopener noreferrer">
+            <h1 class="nav-btn">Home</h1>
+          </a>
+        </div>
+        <div class="divTableCell">
+          <a class="hvr-hang" href="https://example.com" rel="noopener noreferrer">
+            <h1 class="nav-btn">Blog</h1>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Project Gallery -->
+  <div id="gallery" class="divTable projectDivTable">
+    <div class="divTableBody">
+
+      <a href="https://example.com" target="_blank" rel="noopener noreferrer">
+        <div class="divTableRow project-icon-div hvr-forward">
+          <div class="divTableCell">
+            <i class="fa-solid fa-file-circle-question project-icon"></i>
+          </div>
+          <!-- Project Info Table -->
+          <div class="divTableCell">
+            <div class="project-info-div">
+              <h3 class="project-title">Nothing here currently...</h3>
+              <h5 class="project-date">&nbsp;</h5>
+              <div class="divTableRow project-desc-list">
+                <div class="divTableCell">
+                  <p class="project-desc">
+                    come back soon!
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </a>
+
+
+    </div>
+  </div>
+  <!-- lightGallery init script -->
+  <script src="https://cdn.jsdelivr.net/npm/lightgallery@2.9.0/lightgallery.min.js"></script>
+  <script>
+    lightGallery(document.getElementById('gallery'), {
+      selector: '.gallery-img',
+      speed: 5,
+      backdropDuration: 10,
+    });
+  </script>
+
+  <!-- Nav Bar -->
+  <div class="divTable navTable">
+    <div class="divTableBody">
+      <div class="divTableRow">
+        <div class="divTableCell">
+          <p>Copyright &copy; <span id="year"></span> Daksh Kaul. All Rights Reserved.</p>
+        </div>
+        <div class="divTableCell">
+          <a class="social-icon hvr-hang" href="https://github.com/DriftingOtter" target="_blank"
+            rel="noopener noreferrer"><i class="fa-brands fa-github-alt"></i></a>
+          <a class="social-icon hvr-hang" href="https://www.linkedin.com/in/dakshkaul/" target="_blank"
+            rel="noopener noreferrer"><i class="fa-brands fa-linkedin social-icons"></i></a>
+          <a class="social-icon hvr-hang" href="./assets/resume/Daksh_Kaul__Resume_2026_2027.pdf" target="_blank"
+            rel="noopener noreferrer"><i class="fa-solid fa-file-word social-icons"></i></a>
+        </div>
+        <div class="divTableCell">
+          <p>Watching The World Turn &hellip;</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Copyright Date Script -->
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+
+</html>

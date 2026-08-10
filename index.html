@@ -16,6 +16,10 @@
   <link href="css/hover.css" rel="stylesheet">
 
 
+  <!-- Image Gallery Viewer -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery@2.9.0/css/lightgallery-bundle.min.css" />
+
+
   <link href="css/style.css" rel="stylesheet">
   <link rel="icon" type="image/svg+xml" href="./assets/logos/lamda-delta-logo-dark.svg">
 
@@ -29,34 +33,40 @@
   <!-- Name Looping Text -->
   <div class="position-relative marquee-container d-none d-sm-block">
     <div class="marquee d-flex justify-content-around">
-      <span class="loop-text"><b>Daksh Kaul</b>...</span>
+      <span class="loop-text hvr-grow-rotate"><b>Daksh Kaul</b>...</span>
     </div>
   </div>
-
-
 
   <!-- Nav Bar -->
   <div class="divTable navTable">
     <div class="divTableBody">
       <div class="divTableRow">
         <div class="divTableCell">
-          <h1 class="nav-btn">About Me</h1>
+          <a class="hvr-hang" href="./about_me.html" rel="noopener noreferrer">
+            <h1 class="nav-btn">About Me</h1>
+          </a>
         </div>
         <div class="divTableCell">
-          <h1 class="nav-btn">Current Projects</h1>
+          <a class="hvr-hang" href="./current_projects.html" rel="noopener noreferrer">
+            <h1 class="nav-btn">Current Projects</h1>
+          </a>
         </div>
         <div class="divTableCell">
-          <h1 class="nav-btn">Publications</h1>
+          <a class="hvr-hang" href="./publications.html" rel="noopener noreferrer">
+            <h1 class="nav-btn">Publications</h1>
+          </a>
         </div>
         <div class="divTableCell">
-          <h1 class="nav-btn">Blog</h1>
+          <a class="hvr-hang" href="https://example.com" rel="noopener noreferrer">
+            <h1 class="nav-btn">Blog</h1>
+          </a>
         </div>
       </div>
     </div>
   </div>
 
   <!-- Photo Gallery -->
-  <div class="divTable">
+  <div id="gallery" class="divTable">
     <div class="divTableBody">
       <div class="divTableRow">
         <div class="divTableCell"><img class="gallery-img hvr-grow-shadow" src="./assets/photos/nyc_june_26_02.jpg"
@@ -130,6 +140,15 @@
       </div>
     </div>
   </div>
+  <!-- lightGallery init script -->
+  <script src="https://cdn.jsdelivr.net/npm/lightgallery@2.9.0/lightgallery.min.js"></script>
+  <script>
+    lightGallery(document.getElementById('gallery'), {
+      selector: '.gallery-img',
+      speed: 5,
+      backdropDuration: 10,
+    });
+  </script>
 
   <!-- Nav Bar -->
   <div class="divTable navTable">
