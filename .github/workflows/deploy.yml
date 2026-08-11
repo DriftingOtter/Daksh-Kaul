@@ -25,24 +25,34 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
+      # 1. Setup Ruby and install/cache Gems from Gemfile
+      - name: Setup Ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: '3.3' # Installs Ruby
+          bundler-cache: true # Automatically runs 'bundle install' and caches gems [1]
+
+      # 2. Setup Bun
       - name: Setup Bun
         uses: oven-sh/setup-bun@v2
         with:
           bun-version: latest
 
-      - name: Install dependencies
+      # 3. Install Bun dependencies
+      - name: Install Node dependencies
         run: bun install --frozen-lockfile
 
+      # 4. Build site (Runs bun build AND jekyll build successfully)
       - name: Build site
         run: bun run build
 
+      # 5. Upload the compiled Jekyll output folder
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          # IMPORTANT: Change "dist" to your framework's build output directory 
-          # (e.g., "dist", "out", "build", or "." if it builds to the root)
           path: './_site' 
 
+      # 6. Push live to GitHub Pages
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
