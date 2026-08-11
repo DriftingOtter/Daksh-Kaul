@@ -81,7 +81,8 @@ title: Blog
         <div class="divTableRow project-icon-div">
           <div class="divTableCell blog-icon-div">
             {% assign feed_image = post.image | default: '/assets/photos/me.webp' %}
-            <img class="gallery-img" src="{{ feed_image | relative_url }}" alt="{{ post.title | escape }}">
+            <img class="gallery-img" loading="lazy" src="{{ feed_image | relative_url }}"
+              alt="{{ post.title | escape }}">
           </div>
           <div class="divTableCell project-info-div">
             <article class="blog-card">
