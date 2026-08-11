@@ -9,7 +9,6 @@ title: Blog
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <!-- 1. ADD THIS LINE: Tells the browser to prefix paths with /Daksh-Kaul/ -->
   <base href="{{ site.baseurl }}/">
 
   <title>Daksh Kaul - Blog</title>
@@ -81,7 +80,7 @@ title: Blog
       <a href="{{ post.url | relative_url }}" class="read-more-btn hvr-grow-rotate">
         <div class="divTableRow project-icon-div">
           <div class="divTableCell blog-icon-div">
-            {% assign feed_image = post.image | default: '/assets/photos/me.jpg' %}
+            {% assign feed_image = post.image | default: '/assets/photos/me.webp' %}
             <img class="gallery-img" src="{{ feed_image | relative_url }}" alt="{{ post.title | escape }}">
           </div>
           <div class="divTableCell project-info-div">
