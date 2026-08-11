@@ -1,7 +1,9 @@
-# Disable default theme so custom HTML pages are not wrapped
-theme: null
+# Add your exact domain tracking credentials here:
+baseurl: "/Daksh-Kaul"
+url: "https://driftingotter.github.io"
 
-# Show posts dated today or later during local preview if needed
+# Keep the rest of your configuration completely intact:
+theme: null
 future: true
 
 kramdown:
@@ -23,3 +25,4 @@ exclude:
   - README.md
   - scripts
   - .bundle
+

@@ -68,8 +68,9 @@ layout: null
           <article class="blog-post">
             <p class="blog-date">{{ page.date | date: "%B %d, %Y" }}</p>
             <h1 class="blog-title">{{ page.title }}</h1>
-            <img class="gallery-img blog-hero-img"
-              src="{{ page.image | default: '/assets/photos/me.jpg' | relative_url }}" alt="{{ page.title | escape }}">
+            {% assign post_image = page.image | default: '/assets/photos/me.jpg' %}
+            <img class="gallery-img blog-hero-img" src="{{ post_image | relative_url }}"
+              alt="{{ page.title | escape }}">
             <div class="blog-body">
               {{ content }}
             </div>
