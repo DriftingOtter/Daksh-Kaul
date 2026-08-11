@@ -1,0 +1,25 @@
+# Disable default theme so custom HTML pages are not wrapped
+theme: null
+
+# Show posts dated today or later during local preview if needed
+future: true
+
+kramdown:
+  syntax_highlighter: rouge
+  syntax_highlighter_opts:
+    block:
+      line_numbers: true
+
+exclude:
+  - vendor
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - package.json
+  - bun.lockb
+  - server.ts
+  - index.ts
+  - tsconfig.json
+  - README.md
+  - scripts
+  - .bundle

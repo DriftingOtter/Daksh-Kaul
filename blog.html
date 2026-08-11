@@ -1,10 +1,14 @@
+---
+layout: null
+title: Blog
+---
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Daksh Kaul - About Me</title>
+  <title>Daksh Kaul - Blog</title>
 
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -45,8 +49,8 @@
     <div class="divTableBody">
       <div class="divTableRow">
         <div class="divTableCell">
-          <a class="hvr-hang" href="./index.html" rel="noopener noreferrer">
-            <h1 class="nav-btn">Home</h1>
+          <a class="hvr-hang" href="./about_me.html" rel="noopener noreferrer">
+            <h1 class="nav-btn">About Me</h1>
           </a>
         </div>
         <div class="divTableCell">
@@ -60,59 +64,58 @@
           </a>
         </div>
         <div class="divTableCell">
-          <a class="hvr-hang" href="./blog.html" rel="noopener noreferrer">
-            <h1 class="nav-btn">Blog</h1>
+          <a class="hvr-hang" href="./index.html" rel="noopener noreferrer">
+            <h1 class="nav-btn">Home</h1>
           </a>
         </div>
       </div>
     </div>
   </div>
 
-  <!-- Photo Gallery -->
-  <div id="gallery" class="divTable">
+  <!-- Blog Gallery -->
+  <div id="gallery" class="divTable projectDivTable blogDivTable">
     <div class="divTableBody">
-      <div class="divTableRow">
-        <div class="divTableCell bioCell">
-          <img class="gallery-img bio-img hvr-grow-rotate" src="./assets/photos/me.jpg" alt="">
+      {% for post in site.posts %}
+      <a href="{{ post.url | relative_url }}" class="read-more-btn hvr-grow-rotate">
+        <div class="divTableRow project-icon-div">
+          <div class="divTableCell blog-icon-div">
+            <img class="gallery-img" src="{{ post.image | default: '/assets/photos/me.jpg' | relative_url }}"
+              alt="{{ post.title | escape }}">
+          </div>
+          <div class="divTableCell project-info-div">
+            <article class="blog-card">
+              <span class="blog-date">{{ post.date | date: "%B %d, %Y" }}</span>
+              <h3 class="blog-title">{{ post.title }}</h3>
+              <p class="blog-body">{{ post.excerpt | strip_html | truncatewords: 30 }}</p>
+            </article>
+          </div>
         </div>
-        <div class="divTableCell bioCell">
-          <p class="para-bio">
-            My name is Daksh Kaul, I am a Computer Science and Mathematics student at Rutgers University. I drawn to
-            research in scientific fields such as computation and complexity theory, foundational quantum mechanics, and
-            the applied mathematics of physical systems. I work at the boundary between rigorous theory and systems that
-            ship; I am most at home where a problem resists easy categorization and demands both.
-          </p>
+      </a>
+      {% else %}
+      <a href="./index.html" target="_blank" rel="noopener noreferrer">
+        <div class="divTableRow project-icon-div hvr-grow-rotate">
+          <div class="divTableCell">
+            <i class="fa-solid fa-file-circle-question project-icon"></i>
+          </div>
+          <!-- Project Info Table -->
+          <div class="divTableCell">
+            <div class="project-info-div">
+              <h3 class="project-title">Nothing here currently...</h3>
+              <h5 class="project-date">&nbsp;</h5>
+              <div class="divTableRow project-desc-list">
+                <div class="divTableCell">
+                  <p class="project-desc">
+                    come back soon!
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
-      </div>
-      <div class="divTableRow">
-        <div class="divTableCell bioCell">
-          <p class="para-bio">
-            My research is grounded in first principles and a concern with underlying mechanism rather than surface
-            behavior, carried out alongside faculty in the Rutgers Mathematics department, where I have contributed
-            original analytical results within an emerging area of foundational quantum theory, work that rewards
-            exactness and patience in equal measure.
-          </p>
-        </div>
-      </div>
-      <div class="divTableRow">
-        <div class="divTableCell bioCell">
-          <p class="para-bio">
-            As an engineer I am drawn to building complete systems and carrying them through to genuine use, an instinct
-            borne out by open-source initiatives that have together reached 30,000+ readers, drawn $1,500+ in seed
-            funding through NSF I-Corps, earned thousands of downloads, and put specialist engineering and analytical
-            capability into the hands of hobbyists, independent builders, and individual operators who would otherwise
-            sit outside it.
-          </p>
-        </div>
-      </div>
-      <div class="divTableRow">
-        <div class="divTableCell bioCell">
-          <q class="quote-bio">
-            The work I value most tends to do two things at once: deepen a specialist understanding, whilst widening
-            access to it.
-          </q>
-        </div>
-      </div>
+      </a>
+      {% endfor %}
+
+
     </div>
   </div>
   <!-- lightGallery init script -->

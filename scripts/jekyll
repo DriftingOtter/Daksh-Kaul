@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+# Wrapper so `bundle exec jekyll` works on Ruby 3.2+/4 (Liquid 4 still calls #tainted?).
+set -euo pipefail
+ROOT="$(cd "$(dirname "$0")/.." && pwd)"
+cp "$ROOT/_plugins/ruby4_compat.rb" /tmp/jekyll_ruby4_compat.rb
+export RUBYOPT="-r/tmp/jekyll_ruby4_compat.rb${RUBYOPT:+ $RUBYOPT}"
+cd "$ROOT"
+exec bundle exec jekyll "$@"

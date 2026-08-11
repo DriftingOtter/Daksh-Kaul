@@ -4,6 +4,9 @@ node_modules
 # output
 out
 dist
+_site
+.jekyll-cache
+.sass-cache
 bundle.js
 bundle.js.map
 *.tgz
@@ -34,3 +37,16 @@ report.[0-9]_.[0-9]_.[0-9]_.[0-9]_.json
 
 # Finder (MacOS) folder config
 .DS_Store
+
+
+# Jekyll
+_site/
+.sass-cache/
+.jekyll-cache/
+.jekyll-metadata
+.bundle/
+vendor/
+
+# Node
+node_modules/
+dist/

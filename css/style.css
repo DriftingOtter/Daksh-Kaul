@@ -6,6 +6,14 @@
   font-display: swap;
 }
 
+@font-face {
+  font-family: 'Hasklug Nerd Font';
+  src: url('../assets/fonts/hasklug__nerd__font__regular.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
 
 body {
   background-color: white;
@@ -21,7 +29,9 @@ a {
 
 .divTableRow {
   display: flex;
-  margin: 1vw;
+  margin-left: 3vw;
+  margin-right: 3vw;
+  margin-top: 5vh;
 }
 
 .divTableCell {
@@ -29,7 +39,8 @@ a {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin: 3vw;
+  margin-left: 3vw;
+  margin-right: 3vw;
 }
 
 .navTable {
@@ -121,10 +132,11 @@ a {
 }
 
 .project-icon-div {
-  height: 100%;
+  height: auto;
   width: fit-content;
   max-width: 90vw;
   justify-content: center;
+  margin-bottom: 10vh;
 }
 
 .project-info-div {
@@ -185,4 +197,133 @@ a {
   font-family: "Daksh Handwritten", "Indie Flower", sans-serif;
   text-wrap: pretty;
   margin-bottom: 0;
+}
+
+.blog-icon-div {
+  width: 1vw;
+  margin: 0;
+  padding-right: 0;
+}
+
+.blog-icon {
+  font-size: 5vw;
+  margin-right: 0vw;
+}
+
+.blog-post {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  text-align: left;
+  max-width: 50vw;
+  width: 100%;
+}
+
+.blog-card {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  text-align: left;
+  width: 100%;
+}
+
+.blog-title {
+  font-size: 2.5vw;
+  font-family: "Daksh Handwritten", "Indie Flower", sans-serif;
+  margin-bottom: 1vh;
+  margin-top: 0;
+}
+
+.blog-hero-img {
+  width: 20vw;
+  max-width: 40vw;
+  height: auto;
+  margin-top: 2vh;
+  object-fit: cover;
+}
+
+.blog-card .blog-title {
+  font-size: 2vw;
+  margin-bottom: 0;
+}
+
+.blog-date {
+  font-size: 1.2vw;
+  font-family: "Indie Flower", sans-serif;
+  margin-bottom: 1vh;
+  margin-top: 0;
+}
+
+.blog-card .blog-date {
+  font-size: 1vw;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.blog-body {
+  font-size: 2vh;
+  font-family: "Daksh Handwritten", "Indie Flower", sans-serif;
+  word-spacing: 0.3vw;
+  line-height: 1.6;
+  text-wrap: pretty;
+  width: 100%;
+  margin-bottom: 0;
+}
+
+.blogDivTable {
+  margin-top: 5vh;
+}
+
+.blog-body h1,
+.blog-body h2,
+.blog-body h3,
+.blog-body p,
+.blog-body li {
+  font-family: inherit;
+}
+
+.blog-body code,
+.blog-body pre,
+.blog-body .highlight,
+.blog-body .highlighter-rouge {
+  font-family: "Hasklug Nerd Font", ui-monospace, monospace;
+  background-color: #1a1a1a;
+  color: white;
+}
+
+.blog-body .highlight *,
+.blog-body pre code {
+  background: transparent;
+  color: white;
+}
+
+.blog-body pre,
+.blog-body .highlight {
+  overflow-x: auto;
+  width: 100%;
+  padding-left: 1vw;
+}
+
+.blog-body :not(pre)>code {
+  padding: 1vw 1vh;
+}
+
+.blog-body blockquote {
+  padding: 2vw 2vh;
+  border-radius: 0.5vw 0.5vw 0.5vw 0.5vw;
+}
+
+/* Ensures the paragraph text inside the quote behaves nicely */
+.blog-body blockquote p {
+  margin: 0;
+  font-family: "Indie Flower", cursive;
+  font-style: italic;
+  text-align: center;
+}
+
+.blog-post .read-more-btn,
+.blog-card+.read-more-btn,
+a.read-more-btn {
+  font-size: 2vh;
+  font-family: "Daksh Handwritten", "Indie Flower", sans-serif;
 }
